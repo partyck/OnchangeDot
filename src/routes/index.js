@@ -14,4 +14,8 @@ router.get('/liquid', (req, res, next) => {
   res.render('liquid');
 });
 
+router.get('/midi', (req, res, next) => {
+  res.render('midiController');
+});
+
 module.exports = router;
