@@ -6,6 +6,10 @@ router.get('/', (req, res, next) => {
   res.render('mobile');
 });
 
+router.get('/alcatel', (req, res, next) => {
+  res.render('alcatel');
+});
+
 router.get('/liquid', (req, res, next) => {
   res.render('liquid');
 });
