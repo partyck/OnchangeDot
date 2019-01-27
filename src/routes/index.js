@@ -2,6 +2,8 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
+var visitCounter = 1;
+
 router.get('/', (req, res, next) => {
   res.render('mobile');
 });
@@ -15,7 +17,16 @@ router.get('/liquid', (req, res, next) => {
 });
 
 router.get('/midi', (req, res, next) => {
-  res.render('midiController');
+  if(!req.session.visitCount){
+    req.session.visitCount = visitCounter;
+    visitCounter++;
+    console.log('session: ', req.session.visitCount);
+    res.render('midiController', {session: req.session.visitCount});
+  }else{
+    console.log('session: ', req.session.visitCount);
+    res.render('midiController', {session: req.session.visitCount});
+  }
+  
 });
 
 module.exports = router;
