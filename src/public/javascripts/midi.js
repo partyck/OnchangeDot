@@ -1,6 +1,8 @@
-const socket = io.connect('http://192.168.0.4:3000/midi');
+// const socket = io.connect('http://192.168.0.4:3000/midi');
+const socket = io.connect('http://10.15.214.130:3000/midi');
 var antsX, currentKey;
-var instrument = $("#session").html();
+// var instrument = $("#session").html();.
+var instrument = document.getElementById("session").textContent;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
